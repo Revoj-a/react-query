@@ -1,8 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+
+interface Todo {
+  id: number;
+  title: string;
+  completed: boolean;
+}
 
 const TodoList = () => {
-  const [todos, setTodos] = useState();
-  return <div>TodoList</div>;
+  const fetchTodos = () =>
+    axios
+      .get<Todo[]>("https://jsonplaceholder.typicode.com/todos")
+      .then((res) => res.data);
+  const { data: todos } = useQuery({
+    queryKey: ["todos"],
+    queryFn: fetchTodos,
+  });
+
+  return (
+    <ul className="list-group">
+      {todos?.map((todo) => (
+        <li className="list-group-item">{todo.title}</li>
+      ))}
+    </ul>
+  );
 };
 
 export default TodoList;
