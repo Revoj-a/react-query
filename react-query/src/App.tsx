@@ -1,8 +1,15 @@
 import "./App.css";
+import PostList from "./components/PostList";
 import TodoList from "./components/TodoList";
 
 function App() {
-  return <TodoList />;
+  return (
+    <>
+      <div>
+        <PostList />
+      </div>
+    </>
+  );
 }
 
 export default App;
