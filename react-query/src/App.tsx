@@ -3,13 +3,7 @@ import PostList from "./components/PostList";
 import TodoList from "./components/TodoList";
 
 function App() {
-  return (
-    <>
-      <div>
-        <PostList />
-      </div>
-    </>
-  );
+  return <PostList />;
 }
 
 export default App;
