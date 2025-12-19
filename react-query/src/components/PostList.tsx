@@ -3,9 +3,9 @@ import usePost from "../hooks/usePost";
 
 const PostList = () => {
   const pageSize = 10;
-  const [page, setPage] = useState(1);
+
   //const [userId, setUserId] = useState<number>();
-  const { data, error, isLoading } = usePost({ page, pageSize });
+  const { data, error, isLoading } = usePost({ pageSize });
 
   if (error) return <p>{error.message}</p>;
   return (
