@@ -34,9 +34,7 @@ const TodoForm = () => {
           />
         </div>
         <div className="col">
-          <button disabled={addTodo.isPending} className="btn btn-primary">
-            {addTodo.isPending ? "Adding..." : "Add"}
-          </button>
+          <button className="btn btn-primary">Add</button>
         </div>
       </form>
     </>
