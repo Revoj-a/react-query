@@ -6,7 +6,7 @@ interface CounterStore {
   reset: () => void;
 }
 
-const useCounterStore = create<CounterStore>((set) => ({
+export const useCounterStore = create<CounterStore>((set) => ({
   counter: 0,
   increment: () => set((store) => ({ counter: store.counter + 1 })),
   reset: () => set(() => ({ counter: 0 })),
